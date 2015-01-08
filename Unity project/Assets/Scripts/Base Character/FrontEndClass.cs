@@ -13,6 +13,8 @@ public class FrontEndClass : BaseCharacterClass {
 		SQL = 13;
 		KeyboardShortcuts = 11;
 		Security = 13;
+
+		SpecialAblity = new JavaLava();
 	}
 	
 }

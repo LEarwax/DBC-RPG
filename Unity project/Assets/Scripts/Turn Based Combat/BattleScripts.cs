@@ -8,8 +8,13 @@ public class BattleScripts {
 
 	public int playerMaxHealth = GameInformation.MaxHealth;
 	public int playerCurrentHealth = GameInformation.CurrentHealth;
+	public int playerMaxEnergy;
+	public int playerCurrentEnergy;
 	public int enemyMaxHealth;
 	public int enemyCurrentHealth;
+
+
+
 
 	public void InitializeEnemy() {
 		// Hardcoded enemy name for now. Maybe we can save the name in GameInformation when we interact with the NPC using the script attached to it.
@@ -29,12 +34,17 @@ public class BattleScripts {
 	
 	public void BattleStart() {
 		// DECIDE WHO IS GOING FIRST
+		playerMaxEnergy = GameInformation.SQL;
+		playerCurrentEnergy = playerMaxEnergy;
+		Debug.Log (playerCurrentEnergy);
 		InitializeEnemy ();
 		if (GameInformation.KeyboardShortcuts >= enemy.KeyboardShortCuts) {
-			BattleStateMachine.currentState = BattleStateMachine.BattleStates.PLAYERCHOICE;
+			BattleGUI.currentState = BattleGUI.BattleStates.PLAYERCHOICE;
 		} else {
-			BattleStateMachine.currentState = BattleStateMachine.BattleStates.ENEMYCHOICE;
+			BattleGUI.currentState = BattleGUI.BattleStates.ENEMYCHOICE;
 		}
+
+
 	}
 
 	public void BattleWin() {
@@ -57,27 +67,8 @@ public class BattleScripts {
 	}
 
 	public void RubyAttack() {
-//		if (BattleStateMachine.currentState == BattleStateMachine.BattleStates.PLAYERCHOICE) {
-//			// CALCULATE DAMAGE AND SUBTRACT HP
-//			int calcDamage = GameInformation.Ruby * Random.Range (8,12);
-//			enemyCurrentHealth -= calcDamage;
-//			// IF THE ENEMY HEALTH IS 0, WIN, OTHERWISE, ENEMYCHOICE
-//			if (enemyCurrentHealth > 0) {
-//				BattleStateMachine.currentState = BattleStateMachine.BattleStates.ENEMYCHOICE;
-//			} else {
-//				BattleStateMachine.currentState = BattleStateMachine.BattleStates.WIN;
-//			}
-//		} else if (BattleStateMachine.currentState == BattleStateMachine.BattleStates.ENEMYCHOICE) {
-//			// CALCULATE DAMAGE AND SUBTRACT HP
 			int calcDamage = enemy.Ruby * Random.Range (8,12);
 			playerCurrentHealth -= calcDamage;
-//			// IF THE PLAYER HEALTH IS 0, LOSE, OTHERWISE, PLAYERCHOICE
-//			if (playerCurrentHealth > 0) {
-//				BattleStateMachine.currentState = BattleStateMachine.BattleStates.PLAYERCHOICE;
-//			} else {
-//				BattleStateMachine.currentState = BattleStateMachine.BattleStates.LOSE;
-//			}
-//		} 
 	}
 
 	public void JavaScriptAttack() {

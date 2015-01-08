@@ -19,4 +19,6 @@ public class BaseAbility {
 	public int AbilityCost { get; set; }
 	public int Damage { get; set; }
 	public int Stat { get; set; }
+
+
 }

@@ -33,6 +33,7 @@ public class GameInformation : MonoBehaviour {
 
 	public static BaseAbility PlayerMoveOne { get; set; }
 	public static BaseAbility PlayerMoveTwo { get; set; }
+	public static BaseAbility PlayerMoveThree { get; set; }
 
 	// GOLD
 	public static int Gold		 { get; set; }

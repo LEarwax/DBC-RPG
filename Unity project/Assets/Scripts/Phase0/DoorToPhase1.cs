@@ -18,7 +18,7 @@ public class DoorToPhase1 : MonoBehaviour {
 			++textCounter;
 			if (textCounter == 2) {
 				if (GameInformation.helloWorldDefeated) {
-					Application.LoadLevel("Phase1");
+					AutoFade.LoadLevel("IntroScene",3,3,Color.black);
 				} else {
 					Time.timeScale = 0;
 					displayText = true;

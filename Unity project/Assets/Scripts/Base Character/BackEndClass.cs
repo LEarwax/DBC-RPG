@@ -13,6 +13,8 @@ public class BackEndClass : BaseCharacterClass {
 		SQL = 11;
 		KeyboardShortcuts = 14;
 		Security = 12;
+
+		SpecialAblity = new RailsGun();
 	}
 	
 }

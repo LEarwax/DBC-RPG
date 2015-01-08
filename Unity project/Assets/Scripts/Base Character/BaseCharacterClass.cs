@@ -25,5 +25,7 @@ public class BaseCharacterClass {
 	public int SQL { get; set; }
 	public int KeyboardShortcuts { get; set; }
 	public int Security { get; set; }
+
+	public BaseAbility SpecialAblity{get;set;}
 	
 }
